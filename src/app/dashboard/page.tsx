@@ -1,4 +1,4 @@
-import {WorkspaceStats} from '@/components/Dashboard';
+import {WorkspaceStats} from '@/features/dashboard/components';
 
 export default function DashboardPage() {
   return (

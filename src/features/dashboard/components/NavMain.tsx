@@ -1,6 +1,5 @@
 'use client';
 
-import {type LucideIcon} from 'lucide-react';
 import {ChevronRight} from '@/components/icons';
 import {
   SidebarGroup,
@@ -16,26 +15,14 @@ import {
 } from '@/components/ui';
 import {Fragment} from 'react';
 import Link from 'next/link';
+import {NavMenu} from './useDashboard';
 
-export default function NavMain({
-  items,
-}: {
-  items: {
-    title: string;
-    url: string;
-    icon: LucideIcon;
-    isActive?: boolean;
-    items?: {
-      title: string;
-      url: string;
-    }[];
-  }[];
-}) {
+export default function NavMain({menu}: {menu: NavMenu[]}) {
   return (
     <>
       <SidebarGroup>
         <SidebarMenu>
-          {items.map(item => (
+          {menu.map(item => (
             <Fragment key={item.title}>
               {/* For submenu  */}
               {item.items?.length ? (

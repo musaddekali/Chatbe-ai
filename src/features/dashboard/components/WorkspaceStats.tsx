@@ -1,4 +1,9 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../../components/ui';
 
 export default function WorkspaceStats() {
   return (

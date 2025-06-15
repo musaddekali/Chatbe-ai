@@ -10,14 +10,16 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from '../ui';
+} from '../../../components/ui';
 import NavMain from './NavMain';
-import {sidebarData} from './sidebar-data';
 import NavUser from './NavUser';
+import useDashboard from './useDashboard';
 
-export default function SidebarComp({
+export default function DashboardSidebar({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
+  const {navMenu, user} = useDashboard();
+
   return (
     <Sidebar variant="sidebar" collapsible="icon" {...props}>
       <SidebarHeader>
@@ -44,11 +46,11 @@ export default function SidebarComp({
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={sidebarData.navMain} />
+        <NavMain menu={navMenu} />
       </SidebarContent>
       <SidebarRail />
       <SidebarFooter>
-        <NavUser user={sidebarData.user} />
+        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   );
