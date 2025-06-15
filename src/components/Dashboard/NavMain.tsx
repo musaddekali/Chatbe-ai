@@ -17,7 +17,7 @@ import {
 import {Fragment} from 'react';
 import Link from 'next/link';
 
-export function NavMain({
+export default function NavMain({
   items,
 }: {
   items: {

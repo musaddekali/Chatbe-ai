@@ -11,9 +11,9 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from '../ui';
-import {NavMain} from './NavMain';
+import NavMain from './NavMain';
 import {sidebarData} from './sidebar-data';
-import {NavUser} from './NavUser';
+import NavUser from './NavUser';
 
 export default function SidebarComp({
   ...props

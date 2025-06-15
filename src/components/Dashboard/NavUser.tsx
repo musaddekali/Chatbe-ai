@@ -25,9 +25,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui';
-import Link from 'next/link';
 
-export function NavUser({
+export default function NavUser({
   user,
 }: {
   user: {

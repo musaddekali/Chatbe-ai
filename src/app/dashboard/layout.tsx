@@ -1,9 +1,8 @@
-import SidebarComp from '@/components/Dashboard/Sidebar';
+import {SidebarInset, SidebarProvider} from '@/components/ui';
 import {
-  SidebarInset,
-  SidebarProvider,
-} from '@/components/ui';
-import DashboardHeader from '@/components/Dashboard/Header';
+  SidebarComp,
+  DsbHeader as DashboardHeader,
+} from '@/components/Dashboard';
 
 export default function DashboardLayout({
   children,
@@ -15,9 +14,7 @@ export default function DashboardLayout({
       <SidebarComp />
       <SidebarInset>
         <DashboardHeader />
-        <div className='bg-accent p-10'>
-          {children}
-        </div>
+        <div className="p-6 lg:p-10">{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );
