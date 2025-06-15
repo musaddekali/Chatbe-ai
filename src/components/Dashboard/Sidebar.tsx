@@ -9,10 +9,11 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarRail,
 } from '../ui';
 import {NavMain} from './NavMain';
 import {sidebarData} from './sidebar-data';
-import { NavUser } from './NavUser';
+import {NavUser} from './NavUser';
 
 export default function SidebarComp({
   ...props
@@ -45,7 +46,10 @@ export default function SidebarComp({
       <SidebarContent>
         <NavMain items={sidebarData.navMain} />
       </SidebarContent>
-      <SidebarFooter><NavUser user={sidebarData.user} /></SidebarFooter>
+      <SidebarRail />
+      <SidebarFooter>
+        <NavUser user={sidebarData.user} />
+      </SidebarFooter>
     </Sidebar>
   );
 }
