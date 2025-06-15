@@ -1,20 +1,15 @@
 import {BotMessageSquare, Gauge, PieChart, Settings2} from '../icons';
 
 export const sidebarData = {
-  user: {
-    name: 'Mahid Ahmod',
-    email: 'mahid@gamil.com',
-    avatar: '/Avatar.png',
-  },
   navMain: [
     {
       title: 'Dashboard',
-      url: '#',
+      url: '/dashboard',
       icon: Gauge,
     },
     {
       title: 'Agents',
-      url: '#',
+      url: '/dashboard/agents',
       icon: BotMessageSquare,
     },
     {
@@ -47,4 +42,9 @@ export const sidebarData = {
       ],
     },
   ],
+  user: {
+    name: 'Mahid Ahmod',
+    email: 'mahid@gamil.com',
+    avatar: '/Avatar.png',
+  },
 };

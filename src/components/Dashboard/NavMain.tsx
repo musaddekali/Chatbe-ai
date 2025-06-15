@@ -15,6 +15,7 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui';
 import {Fragment} from 'react';
+import Link from 'next/link';
 
 export function NavMain({
   items,
@@ -69,10 +70,10 @@ export function NavMain({
               ) : (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild tooltip={item.title}>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               )}
