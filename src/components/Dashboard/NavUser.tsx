@@ -25,6 +25,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@/components/ui';
+import Link from 'next/link';
 
 export function NavUser({
   user,
@@ -50,8 +51,12 @@ export function NavUser({
                 <AvatarFallback className="rounded-lg">ME</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span title={user?.name} className="truncate font-medium">{user.name}</span>
-                <span title={user?.email} className="truncate text-xs">{user.email}</span>
+                <span title={user?.name} className="truncate font-medium">
+                  {user.name}
+                </span>
+                <span title={user?.email} className="truncate text-xs">
+                  {user.email}
+                </span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
@@ -96,7 +101,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem variant="destructive">
               <LogOut />
               Log out
             </DropdownMenuItem>
