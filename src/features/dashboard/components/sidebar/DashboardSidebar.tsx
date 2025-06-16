@@ -10,10 +10,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
-} from '../../../components/ui';
+} from '../../../../components/ui';
 import NavMain from './NavMain';
 import NavUser from './NavUser';
-import useDashboard from './useDashboard';
+import useDashboard from '../useDashboard';
 
 export default function DashboardSidebar({
   ...props

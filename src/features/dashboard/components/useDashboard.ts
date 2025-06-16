@@ -12,12 +12,6 @@ export type NavMenu = {
   }[];
 };
 
-const user = {
-  name: 'Mahid Ahmod',
-  email: 'mahid@gamil.com',
-  avatar: '/Avatar.png',
-};
-
 const navMenu: NavMenu[] = [
   {
     title: 'Dashboard',
@@ -59,6 +53,12 @@ const navMenu: NavMenu[] = [
     ],
   },
 ];
+
+const user = {
+  name: 'Mahid Ahmod',
+  email: 'mahid@gamil.com',
+  avatar: '/Avatar.png',
+};
 
 export default function useDashboard() {
   return {navMenu, user};

@@ -15,7 +15,7 @@ import {
 } from '@/components/ui';
 import {Fragment} from 'react';
 import Link from 'next/link';
-import {NavMenu} from './useDashboard';
+import {NavMenu} from '../useDashboard';
 
 export default function NavMain({menu}: {menu: NavMenu[]}) {
   return (
