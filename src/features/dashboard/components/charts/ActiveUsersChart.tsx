@@ -9,36 +9,37 @@ import {
 } from '@/components/ui';
 
 const chartData = [
-  {day: '5 Jan', app: 120, web: 180, agent: 75},
-  {day: '10 Jan', app: 135, web: 190, agent: 80},
-  {day: '15 Jan', app: 145, web: 200, agent: 85},
-  {day: '20 Jan', app: 130, web: 175, agent: 78},
-  {day: '25 Jan', app: 150, web: 195, agent: 90},
-  {day: '30 Jan', app: 160, web: 185, agent: 88},
-  {day: '4 Feb', app: 155, web: 200, agent: 92},
-  {day: '9 Feb', app: 170, web: 210, agent: 97},
-  {day: '14 Feb', app: 165, web: 195, agent: 91},
-  {day: '19 Feb', app: 175, web: 220, agent: 96},
-  {day: '24 Feb', app: 180, web: 225, agent: 99},
-  {day: '1 Mar', app: 190, web: 230, agent: 105},
-  {day: '6 Mar', app: 200, web: 240, agent: 110},
-  {day: '11 Mar', app: 185, web: 215, agent: 103},
-  {day: '16 Mar', app: 195, web: 235, agent: 108},
+  { day: "5 Jan", desktop: 132, mobile: 75 },
+  { day: "10 Jan", desktop: 145, mobile: 82 },
+  { day: "15 Feb", desktop: 198, mobile: 92 },
+  { day: "20 Feb", desktop: 205, mobile: 95 },
+  { day: "5 Mar", desktop: 145, mobile: 110 },
+  { day: "10 Mar", desktop: 152, mobile: 108 },
+  { day: "15 Apr", desktop: 220, mobile: 130 },
+  { day: "20 Apr", desktop: 210, mobile: 125 },
+  { day: "5 May", desktop: 160, mobile: 100 },
+  { day: "10 May", desktop: 170, mobile: 104 },
+  { day: "15 Jun", desktop: 175, mobile: 115 },
+  { day: "20 Jun", desktop: 180, mobile: 112 },
+  { day: "5 Jul", desktop: 210, mobile: 140 },
+  { day: "10 Jul", desktop: 205, mobile: 138 },
+  { day: "15 Aug", desktop: 189, mobile: 120 },
+  { day: "20 Aug", desktop: 192, mobile: 118 },
+  { day: "5 Sep", desktop: 202, mobile: 125 },
+  { day: "10 Sep", desktop: 198, mobile: 122 },
+  { day: "15 Oct", desktop: 230, mobile: 160 },
+  { day: "20 Oct", desktop: 225, mobile: 158 },
 ];
 
 const chartConfig = {
-  app: {
-    label: 'App',
+  desktop: {
+    label: 'Desktop',
     color: 'var(--chart-1)',
   },
-  web: {
-    label: 'Website',
+  mobile: {
+    label: 'Mobile',
     color: 'var(--chart-2)',
-  },
-  agent: {
-    label: 'Agent',
-    color: 'var(--chart-5)',
-  },
+  }
 } satisfies ChartConfig;
 
 export default function ActiveUsersChart() {
@@ -57,9 +58,8 @@ export default function ActiveUsersChart() {
         />
         <ChartTooltip content={<ChartTooltipContent />} />
         {/* <ChartLegend content={<ChartLegendContent />} /> */}
-        <Bar dataKey="app" fill="var(--color-app)" radius={4} />
-        <Bar dataKey="web" fill="var(--color-web)" radius={4} />
-        <Bar dataKey="agent" fill="var(--color-agent)" radius={4} />
+        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
       </BarChart>
     </ChartContainer>
   );
