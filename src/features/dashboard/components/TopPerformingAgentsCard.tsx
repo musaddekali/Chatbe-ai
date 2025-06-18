@@ -18,7 +18,6 @@ import {
   SelectValue,
 } from '@/components/ui';
 import {useState} from 'react';
-import ActiveUsersChart from './charts/ActiveUsersChart';
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from 'recharts';
 
 const chartData = [

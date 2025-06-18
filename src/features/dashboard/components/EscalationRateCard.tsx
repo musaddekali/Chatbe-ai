@@ -14,7 +14,6 @@ import {
   SelectValue,
 } from '@/components/ui';
 import {useState} from 'react';
-import ActiveUsersChart from './charts/ActiveUsersChart';
 
 export type TimeRangeOption = {
   value: string;
@@ -62,7 +61,7 @@ export default function EscalationRateCard() {
         </CardAction>
       </CardHeader>
       <CardContent>
-        <ActiveUsersChart />
+        {/* <ActiveUsersChart /> */}
       </CardContent>
     </Card>
   );
