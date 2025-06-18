@@ -20,7 +20,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export default function ActiveUsersChart({
+export default function ActiveUsers({
   filteredData,
 }: {
   filteredData: ChartDataItem[];
