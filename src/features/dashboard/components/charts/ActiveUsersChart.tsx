@@ -12,11 +12,11 @@ import {ChartDataItem} from '../TotalActiveUsersCard';
 const chartConfig = {
   desktop: {
     label: 'Desktop',
-    color: 'var(--chart-1)',
+    color: 'var(--chart-2)',
   },
   mobile: {
     label: 'Mobile',
-    color: 'var(--chart-2)',
+    color: 'var(--chart-1)',
   },
 } satisfies ChartConfig;
 
@@ -61,8 +61,18 @@ export default function ActiveUsersChart({
           }
         />
         {/* <ChartLegend content={<ChartLegendContent />} /> */}
-        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+        <Bar
+          stackId="a"
+          dataKey="desktop"
+          fill="var(--color-desktop)"
+          radius={[0, 0, 0, 0]}
+        />
+        <Bar
+          stackId="a"
+          dataKey="mobile"
+          fill="var(--color-mobile)"
+          radius={[2, 2, 0, 0]}
+        />
       </BarChart>
     </ChartContainer>
   );
