@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from '@/components/ui';
 import {useState} from 'react';
-import ActiveUsersChart from './charts/ActiveUsersChart';
+import ActiveUsers from './charts/ActiveUsers';
 
 export type ChartDataItem = {
   date: string;
@@ -174,7 +174,7 @@ export default function TotalActiveUsersCard() {
         </CardAction>
       </CardHeader>
       <CardContent>
-        <ActiveUsersChart filteredData={filteredData} />
+        <ActiveUsers filteredData={filteredData} />
       </CardContent>
     </Card>
   );

@@ -7,10 +7,6 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
   Select,
   SelectContent,
   SelectItem,
@@ -18,42 +14,17 @@ import {
   SelectValue,
 } from '@/components/ui';
 import {useState} from 'react';
-import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from 'recharts';
-
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-]
-
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--chart-1)",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
-  },
-  label: {
-    color: "var(--background)",
-  },
-} satisfies ChartConfig
+import TopPerformingAgents from './charts/TopPerformingAgents';
 
 export type TimeRangeOption = {
   value: string;
   label: string;
 };
 
-// For testing only
 const timeRangeOptions: TimeRangeOption[] = [
-  {value: 'last_3_month', label: 'Last 3 months'},
-  {value: 'last_month', label: 'Last month'},
-  {value: 'this_year', label: 'This year'},
-  {value: 'last_year', label: 'Last year'},
+  {value: '90d', label: 'Last 3 months'},
+  {value: '30d', label: 'Last 30 days'},
+  {value: '7d', label: 'Last 7 days'},
 ];
 
 const defaultTimeRange = timeRangeOptions[0].value;
@@ -65,11 +36,10 @@ export default function TopPerformingAgentsCard() {
     <Card aria-label="Top performing agents">
       <CardHeader>
         <CardTitle className="text-base font-medium">
-          Total active users
+          Top performing agents
         </CardTitle>
         <CardDescription className="text-muted-foreground text-sm">
-          Showing total active users for the{' '}
-          {selectedRange.replaceAll('_', ' ')}
+          Jul 10 - Jul 17, 2025
         </CardDescription>
         <CardAction>
           <Select
@@ -89,53 +59,7 @@ export default function TopPerformingAgentsCard() {
         </CardAction>
       </CardHeader>
       <CardContent>
-         <ChartContainer config={chartConfig}>
-          <BarChart
-            accessibilityLayer
-            data={chartData}
-            layout="vertical"
-            margin={{
-              right: 16,
-            }}
-          >
-            <CartesianGrid horizontal={false} />
-            <YAxis
-              dataKey="month"
-              type="category"
-              tickLine={false}
-              tickMargin={10}
-              axisLine={false}
-              tickFormatter={(value) => value.slice(0, 3)}
-              hide
-            />
-            <XAxis dataKey="desktop" type="number" hide />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
-            />
-            <Bar
-              dataKey="desktop"
-              layout="vertical"
-              fill="var(--color-desktop)"
-              radius={4}
-            >
-              <LabelList
-                dataKey="month"
-                position="insideLeft"
-                offset={8}
-                className="fill-(--color-label)"
-                fontSize={12}
-              />
-              <LabelList
-                dataKey="desktop"
-                position="right"
-                offset={8}
-                className="fill-foreground"
-                fontSize={12}
-              />
-            </Bar>
-          </BarChart>
-        </ChartContainer>
+        <TopPerformingAgents />
       </CardContent>
     </Card>
   );
