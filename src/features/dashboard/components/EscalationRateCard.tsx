@@ -14,18 +14,17 @@ import {
   SelectValue,
 } from '@/components/ui';
 import {useState} from 'react';
+import EscalationRate from './charts/EscalationRate';
 
 export type TimeRangeOption = {
   value: string;
   label: string;
 };
 
-// For testing only
 const timeRangeOptions: TimeRangeOption[] = [
-  {value: 'last_3_month', label: 'Last 3 months'},
-  {value: 'last_month', label: 'Last month'},
-  {value: 'this_year', label: 'This year'},
-  {value: 'last_year', label: 'Last year'},
+  {value: '90d', label: 'Last 3 months'},
+  {value: '30d', label: 'Last 30 days'},
+  {value: '7d', label: 'Last 7 days'},
 ];
 
 const defaultTimeRange = timeRangeOptions[0].value;
@@ -36,12 +35,9 @@ export default function EscalationRateCard() {
   return (
     <Card aria-label="Escalation rate">
       <CardHeader>
-        <CardTitle className="text-base font-medium">
-          Total active users
-        </CardTitle>
+        <CardTitle className="text-base font-medium">Escalation rate</CardTitle>
         <CardDescription className="text-muted-foreground text-sm">
-          Showing total active users for the{' '}
-          {selectedRange.replaceAll('_', ' ')}
+          Jul 10 - Jul 17, 2025
         </CardDescription>
         <CardAction>
           <Select
@@ -61,7 +57,7 @@ export default function EscalationRateCard() {
         </CardAction>
       </CardHeader>
       <CardContent>
-        {/* <ActiveUsersChart /> */}
+        <EscalationRate />
       </CardContent>
     </Card>
   );

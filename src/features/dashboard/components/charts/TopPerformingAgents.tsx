@@ -23,8 +23,8 @@ const chartData = [
 ];
 
 const chartConfig = {
-  desktop: {
-    label: 'Desktop',
+  agent: {
+    label: 'Agent',
     color: 'var(--chart-1)',
   },
   label: {
@@ -39,7 +39,7 @@ export default function TopPerformingAgents() {
           accessibilityLayer
           data={chartData}
           layout="vertical"
-          // maxBarSize={32}
+          maxBarSize={40}
           margin={{
             right: 16,
           }}>
@@ -61,7 +61,7 @@ export default function TopPerformingAgents() {
           <Bar
             dataKey="value"
             layout="vertical"
-            fill="var(--color-desktop)"
+            fill="var(--color-agent)"
             radius={8}>
             <LabelList
               dataKey="agent_type"
