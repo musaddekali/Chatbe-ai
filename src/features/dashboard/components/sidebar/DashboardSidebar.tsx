@@ -30,6 +30,7 @@ export default function DashboardSidebar({
               size="lg">
               <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                 <Image
+                  className="dark:invert"
                   width={40}
                   height={40}
                   alt="Chatbe Logo"
