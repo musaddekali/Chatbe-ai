@@ -14,3 +14,4 @@ export * from './sheet';
 export * from './select';
 export * from './sidebar';
 export * from './skeleton';
+export * from './table';
