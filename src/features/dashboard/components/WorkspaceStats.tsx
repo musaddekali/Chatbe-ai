@@ -10,7 +10,7 @@ export default function WorkspaceStats() {
   return (
     <>
       <div className="mt-6 grid grid-cols-1 gap-4 @md/card-wrapper:grid-cols-2 @3xl/card-wrapper:grid-cols-3 @5xl/card-wrapper:grid-cols-4">
-        <Card>
+        <Card className='py-4'>
           <CardHeader>
             <CardTitle className="text-2xl font-semibold tabular-nums">
               <span>{Math.floor(Math.random() * 500)}</span>{' '}
@@ -23,7 +23,7 @@ export default function WorkspaceStats() {
             </CardDescription>
           </CardHeader>
         </Card>
-        <Card>
+        <Card className='py-4'>
           <CardHeader>
             <CardTitle className="text-2xl font-semibold tabular-nums">
               <span>{Math.floor(Math.random() * 500)}</span>{' '}
@@ -36,7 +36,7 @@ export default function WorkspaceStats() {
             </CardDescription>
           </CardHeader>
         </Card>
-        <Card>
+        <Card className='py-4'>
           <CardHeader>
             <CardTitle className="text-2xl font-semibold tabular-nums">
               <span>{Math.floor(Math.random() * 500)}</span>{' '}
@@ -49,7 +49,7 @@ export default function WorkspaceStats() {
             </CardDescription>
           </CardHeader>
         </Card>
-        <Card>
+        <Card className='py-4'>
           <CardHeader>
             <CardTitle className="text-2xl font-semibold tabular-nums">
               <span>3</span>{' '}

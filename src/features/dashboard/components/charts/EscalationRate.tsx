@@ -74,7 +74,7 @@ export default function EscalationRate() {
         />
         <ChartLegend 
           content={<ChartLegendContent nameKey="escalation_type" />}
-          className="-translate-y-2 flex-wrap gap-2 *:basis-1/4 *:justify-center"
+          className="-translate-y-2 flex-wrap gap-x-4 gap-y-2 "
         />
       </PieChart>
     </ChartContainer>

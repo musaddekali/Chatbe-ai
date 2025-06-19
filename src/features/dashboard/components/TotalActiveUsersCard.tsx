@@ -148,7 +148,7 @@ export default function TotalActiveUsersCard() {
   });
   
   return (
-    <Card className="col-span-full" aria-label="Total active users overview">
+    <Card className="lg:col-span-full" aria-label="Total active users overview">
       <CardHeader>
         <CardTitle className="text-base font-medium">
           Total active users
