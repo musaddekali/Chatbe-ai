@@ -1,12 +1,11 @@
-import {Moon, Sun} from '@/components/icons';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbList,
   BreadcrumbPage,
-  Button,
   SidebarTrigger,
 } from '../../../components/ui';
+import { ModeToggle } from '@/components/theme/ModeToggler';
 
 export default function DashboardHeader() {
   return (
@@ -21,9 +20,7 @@ export default function DashboardHeader() {
           </BreadcrumbList>
         </Breadcrumb>
         <div className="ms-auto">
-          <Button variant={'ghost'} size={'icon'}>
-            <Moon /> <Sun />
-          </Button>
+          <ModeToggle />
         </div>
       </div>
     </header>
