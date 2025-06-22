@@ -36,7 +36,7 @@ const navMenu: NavMenu[] = [
     items: [
       {
         title: 'General',
-        url: '#',
+        url: '/dashboard/settings/general',
       },
       {
         title: 'Team',

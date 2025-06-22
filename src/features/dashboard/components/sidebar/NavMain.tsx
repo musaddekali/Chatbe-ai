@@ -16,8 +16,26 @@ import {
 import {Fragment} from 'react';
 import Link from 'next/link';
 import {NavMenu} from '../useDashboard';
+import {usePathname} from 'next/navigation';
+import {cn} from '@/lib/utils';
 
 export default function NavMain({menu}: {menu: NavMenu[]}) {
+  const currentPath = usePathname();
+
+  function isCurrentPage(url: string) {
+    if (!url) return;
+    return url == currentPath;
+  }
+
+  // Active dropdown when submenu is active by page url
+  function hasActiveSubRoute(menuItem: NavMenu): boolean {
+    if (!menuItem || !menuItem?.items?.length) return false;
+    const isActiveSubItem = menuItem.items?.some(subItem =>
+      isCurrentPage(subItem.url)
+    );
+    return !!isActiveSubItem;
+  }
+
   return (
     <>
       <SidebarGroup>
@@ -29,7 +47,7 @@ export default function NavMain({menu}: {menu: NavMenu[]}) {
                 <Collapsible
                   key={item.title}
                   asChild
-                  defaultOpen={item.isActive}
+                  defaultOpen={hasActiveSubRoute(item) || item.isActive}
                   className="group/collapsible">
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
@@ -43,9 +61,13 @@ export default function NavMain({menu}: {menu: NavMenu[]}) {
                       <SidebarMenuSub>
                         {item.items?.map(subItem => (
                           <SidebarMenuSubItem key={subItem.title}>
-                            <SidebarMenuSubButton asChild>
+                            <SidebarMenuSubButton
+                              className={cn('leading-snug',{
+                                'bg-sidebar-accent': isCurrentPage(subItem.url),
+                              })}
+                              asChild>
                               <Link href={subItem.url}>
-                                <span>{subItem.title}</span>
+                                {subItem.title}
                               </Link>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
@@ -56,7 +78,12 @@ export default function NavMain({menu}: {menu: NavMenu[]}) {
                 </Collapsible>
               ) : (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title}>
+                  <SidebarMenuButton
+                    className={cn({
+                      'bg-sidebar-accent': isCurrentPage(item.url),
+                    })}
+                    asChild
+                    tooltip={item.title}>
                     <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
