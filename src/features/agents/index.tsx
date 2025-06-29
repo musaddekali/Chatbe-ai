@@ -2,7 +2,8 @@
 
 import {Plus} from '@/components/icons';
 import {Button} from '@/components/ui';
-import AgentsTable from './components/AgentsTable';
+import AgenstList from './components/AgenstList';
+import AgentsTable from './components/AgentsTable_old';
 
 export default function Agents() {
   return (
@@ -20,7 +21,7 @@ export default function Agents() {
       </div>
 
       <div className="mt-6">
-        <AgentsTable />
+        <AgenstList />
       </div>
     </section>
   );
